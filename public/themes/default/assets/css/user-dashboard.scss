@@ -1,0 +1,32 @@
+$primary: #59a4cb;
+
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+
+$theme-colors: (
+	primary: $primary
+);
+
+header .navbar-nav .nav-item.active .nav-link {
+	border-bottom: 3px solid $primary;
+}
+
+main nav .nav-link,
+main nav .page-link {
+	color: $secondary;
+}
+
+main .file-link {
+	color: $secondary;
+	text-decoration: underline;
+}
+
+.bin {
+	h5 {
+		font-size: 0.8em;
+		opacity: 0.4;
+	}
+}
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';

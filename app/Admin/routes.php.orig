@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Routing\Router;
+use Illuminate\Support\Facades\Route;
+use Dcat\Admin\Admin;
+
+Admin::routes();
+
+Route::group([
+    'prefix'     => config('admin.route.prefix'),
+    'namespace'  => config('admin.route.namespace'),
+    'middleware' => config('admin.route.middleware'),
+], function (Router $router) {
+
+    $router->get('/', 'HomeController@index');
+//$router->get('docs', 'DocsController@index');
+	Route::resource('docs', 'DocsController');
+    Route::resource('orders', 'OrderController');
+
+    Route::resource('languages', 'LanguageController');
+    Route::resource('language-combination', 'LanguageComboController');
+
+    Route::resource('system-parameters', 'SystemParameterController');
+
+    Route::resource('email-management', 'EmailManagementController');
+
+    Route::resource('manage-clients', 'UserController');
+
+    Route::resource('manage-translators', 'TranslatorController');
+
+	Route::resource('recipient', 'RecipientController');
+
+});

@@ -1,0 +1,41 @@
+$primary: #59a4cb;
+
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/mixins';
+
+$theme-colors: (
+	primary: $primary
+);
+
+html,
+body,
+main,
+main .row {
+	height: 100%;
+}
+
+.card.left-sidebar {
+	border-radius: unset;
+	background-image: url('../img/login_bg.png');
+	background-size: cover;
+	.card-img-overlay {
+		background-color: rgba($color: $primary, $alpha: 0.8);
+	}
+}
+
+.nav .nav-link {
+	color: $secondary;
+	&.active {
+		color: $primary;
+		border-bottom: 3px solid $primary;
+	}
+}
+
+#forgot-password-btn,
+#become-translator-btn {
+	border: none;
+	background: none;
+}
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
